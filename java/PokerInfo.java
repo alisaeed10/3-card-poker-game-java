@@ -4,13 +4,14 @@
 //          So if user able to move to the next stage in the clients program then the client will send that information
 //          through the pokerInfo object to the server which displays what had happened. The same goes for if the user does something to the server program.
 
+
 import java.io.Serializable;
 import java.util.*;
 
 public class PokerInfo implements Serializable {
 
     public ArrayList<Integer> cards; // stores the 52 cards in the deck
-    public HashSet<Integer> queenHigh;  // storing the queen or higher cards
+    public HashSet<Integer> queenHigh; // storing the queen or higher cards
     public int moneyLost; // indicate the amount of money player has
     public int moneyWon; // store the amount of money player won
     public int ante; // players ante bet
@@ -27,7 +28,6 @@ public class PokerInfo implements Serializable {
     public String message; // storing the message to send
     boolean pairChecked; // checking if the cards form a pair
     int pairPlusWin; // storing the amount of money the user won from the pair plus bet
-
 
     // PokerInfo:
     //      Constructor initializes all the game components to their starting phase. Takes in a boolean and two int values and then initializes those parameters to this classes fields
@@ -46,6 +46,7 @@ public class PokerInfo implements Serializable {
             queenHigh.add(i + 13);
             i += 13;
         }
+
         this.cardOrganization = new HashMap<>();
         int cardNumber = 2;
         int shape = 1;
@@ -82,7 +83,6 @@ public class PokerInfo implements Serializable {
         this.pairPlusWin = 0;
 
     }
-
 
     // generateRandomCards:
     //      Description: Method will generate 3 random cards from the arrayList containing the 52 cards and then stores them into the arrayList that was passed in
